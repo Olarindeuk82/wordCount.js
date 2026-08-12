@@ -98,13 +98,16 @@
 
             let textArea = document.getElementById("items");
             let display = document.getElementById("count");
+            let charDisplay = document.getElementById("char");
 
 
-            let textLength = textArea.value.replaceAll(" ", "").length;
-            char.innerHTML = items.value.trim().split("").length
+           let cleanText = textArea.value.trim();
+  
+            let totalCharsNoSpaces = textArea.value.replace(/\s/g, "").length;
+            charDisplay.innerHTML = totalCharsNoSpaces;
 
-            display.innerHTML = textLength;
-            console.log(textArea.value.length);
+           let totalWords = cleanText === "" ? 0 : cleanText.split(/\s+/).length;
+            display.innerHTML = totalWords;
 
             // textArea.style.marginTop="80px"
 
