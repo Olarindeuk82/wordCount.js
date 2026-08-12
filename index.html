@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes scrollLeft {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+
+        .scrolling-text {
+            display: inline-block;
+            white-space: nowrap;
+            font-family: sans-serif;
+            font-weight: bold;
+            font-size: 1.2rem;
+
+
+            animation: scrollLeft 15s linear infinite;
+        }
+    </style>
+
+</head>
+<header
+    style="width: 100%; height: 70px; background-color: aqua; display: flex; align-items: center; overflow: hidden;">
+    <div class="scrolling-text">
+        Welcome to your Vocabulary Counter App! count your typing limit in real-time.
+    </div>
+</header>
+
+<body
+    style="display: flex; flex-direction: column; justify-content: flex-start; align-items: center; min-height: 100vh; margin: 0; box-sizing: border-box; padding: 20px;">
+
+
+    <div
+        style="border: 0px solid red; border-radius: 10px; width: 95%; max-width: 600px; height: 80dvh; margin: 30px auto; display: flex; justify-content: space-around; background-image: url(https://i.pinimg.com/736x/ba/03/0d/ba030d3acb71832bbab36255441762e2.jpg); background-size: cover; padding: 20px; box-sizing: border-box;">
+
+        <div class="head"
+            style="border: 2px solid white; width: 100%; height: fit-content; display: flex; flex-direction: column; align-items: center; box-sizing: border-box; border-top: 0px; border-left: 0px; border-right: 0px; margin-top: 10px;">
+            <div class="texttitle"
+                style="border: 0px solid green; width: fit-content; height: fit-content; text-align: center;">
+                <h5
+                    style="font-family: Georgia, 'Times New Roman', Times, serif; margin: 10px 0; font-size: 20px; color: white;">
+                    Test your vocabulary counts</h5>
+            </div>
+            <textarea name="" onkeyup="countWords()" id="items" rows="10" placeholder="enter your text here"
+                style="margin: 20px 0; width: 100%; max-width: 100%; box-sizing: border-box; padding: 10px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px; font-family: 'Gill Sans', Calibri, sans-serif;"></textarea>
+            <h1 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"><span
+                    id="count">0</span> words</h1> <span id="char">0</span><span>characters</span>
+
+            <div class="imgs"
+                style="border: 0px solid white; width: 100%; height: fit-content; display: flex; justify-content: space-between;">
+                <div class="child"
+                    style="border: 0px solid red; width:90px; height: 10dvh; background-image: url(https://i.pinimg.com/736x/94/35/b7/9435b74e75d1055a35dc7fd1d2175f40.jpg); background-size: contain;background-repeat: no-repeat;">
+                </div>
+
+                <div class="child"
+                    style="border: 0px solid red; width:90px; height: 10dvh; background-image: url(https://i.pinimg.com/474x/20/73/6e/20736e1644e9ee2ebfef1633367debda.jpg); background-size: contain;background-repeat: no-repeat;">
+                </div>
+
+                <div class="child"
+                    style="border: 0px solid red; width:90px; height: 10dvh; background-image: url(https://i.pinimg.com/originals/a8/f9/1b/a8f91b4c76c8a1de0bbd74b444a51476.jpg); background-size: contain;background-repeat: no-repeat;">
+                </div>
+
+                <div class="child"
+                    style="border: 0px solid red; width:90px; height: 10dvh; background-image: url(https://i.pinimg.com/originals/f1/3a/c6/f13ac6d230e7726d8b2bda0244bffda3.jpg); background-size: contain;background-repeat: no-repeat;">
+                </div>
+
+                <div class="child"
+                    style="border: 0px solid red; width:90px; height: 10dvh; background-image: url(https://i.pinimg.com/originals/ca/b6/5b/cab65bd756caa361449e149c4c88a27b.png); background-size: contain;background-repeat: no-repeat;">
+                </div>
+
+                <div class="child"
+                    style="border: 0px solid red; width:90px; height: 10dvh; background-image: url(https://i.pinimg.com/originals/ec/a9/0e/eca90e414ed782551e64ad569419a6be.png); background-size: contain;background-repeat: no-repeat;">
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <script>
+
+        function countWords() {
+            //    count.innerHTML=items.value.replaceAll(" ","").length
+            //    console.log(items.value.length);
+
+
+            let textArea = document.getElementById("items");
+            let display = document.getElementById("count");
+
+
+            let textLength = textArea.value.replaceAll(" ", "").length;
+            char.innerHTML = items.value.trim().split("").length
+
+            display.innerHTML = textLength;
+            console.log(textArea.value.length);
+
+            // textArea.style.marginTop="80px"
+
+            if (textLength < 20) {
+                textArea.style.color = "red";
+
+            } else {
+                textArea.style.color = "green";
+            }
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>
